@@ -1,13 +1,11 @@
+# AWS/python base image
 FROM public.ecr.aws/lambda/python:3.9
 
-# Install the function's dependencies using file requirements.txt
-# from your project folder.
+# Copy files 
+COPY . ${LAMBDA_TASK_ROOT}
 
-COPY requirements.txt  .
+# Install dependencies
 RUN  pip3 install -r requirements.txt --target "${LAMBDA_TASK_ROOT}"
 
-# Copy function code
-COPY DataGatherer.py ${LAMBDA_TASK_ROOT}
-
-# Set the CMD to your handler (could also be done as a parameter override outside of the Dockerfile)
+# Runs the handler function in DataGatherer.py when run
 CMD [ "DataGatherer.handler" ] 
