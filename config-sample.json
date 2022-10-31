@@ -1,0 +1,6 @@
+{
+    "endpoint": "SampleDatabase.sduyfihjkfds.region.rds.amazonaws.com",
+    "username": "admin",
+    "password": "DatabasePassword",
+    "database_name": "SampleDatabase"
+}
