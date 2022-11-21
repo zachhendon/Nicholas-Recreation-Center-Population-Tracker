@@ -9,9 +9,18 @@ The main tools that I used to retrieve the data from the website were the python
 The data is then extracted from the request using BeautifulSoup. It is immediately exported to a MySQL database. The database information is stored in a [config.json](config-sample.json) file and needs to be configured to the database. 
 ### Automating this process
 Using Docker and the AWS/Python3.9 base image, the application is exported to AWS and stored in its Elastic Container Registry. The MySQL database is hosted by its Relational Database Service (RDS). The main program is [DataGatherer.py](DataGatherer.py) and is automatically run in AWS Lambda. The Lambda function runs the pushed container every 30 minutes, appending the newly scraped data to the MySQL RDS database.
+### Analysis
+The entirety of the analysis is found in the Jupyter Notebook [DataAnalyzer.ipynb](DataAnalyzer.ipynb). I used PyMySQL to retrieve the data from the database in the form of a tuple. I then converted this to a Pandas DataFrame. I implemented various functions to clean the data, such as removing duplicates. After that, I created a new DataFrame that contained the average population for each hour. I built a function that plots these averages 8 times (the overall averages and 1 for each day of the week) using Matplotlib. 
+
+<img src="Lvl3.png" width=300 height=300>
+
+## Results
+All the different floors have very similar results. The gym population reaches a peak at about 6:00. Based on my experience and opinions, this data shows that any time between 2:00-4:00 is a reasonable time to go. I belive that any time before 2:00 is the ideal time to go to the gym.
+
+One thing to note is that during the later hours there is less data, which may explain the drop offs in some of the graphs. The population appears to drop, but more data (there is currently 3 weeks of data) is required to make actionable decisons.
 ## Status
-The immediate next step is to add further parameters to the tables. Adding more variables (temperature/weather, game day/week, etc.) will allow for more in-depth analysis. While some of this analysis may be currently too advanced for me, collecting this data will allow me to come back to it when I am more knowledgeable in math and statistics.
+The most useful portion of the data analysis is finished. In the near future, I will add more variables (temperature/weather, game day/week, etc.). This will allow me to analyze more trends and relationships, but this requires the data to accumulate for a while. 
 
-The next step will be to analyze the data. I will primarily focus on analyzing the best times of day and best days of the week to go to the gym. I may come back to some of the more advanced topics at a later date. 
+I also will add a feature that automatically produces a weekly report using HTML and CSS in the future. 
 
-Finally, I wish to produce a weekly report. This will initially be very bare-bones. In the future, I am looking into generating a pdf report using HTML and CSS.
+UW Madison is currently building another facility. It is set to be finished in the next few months. When it is finished, I will begin collecting data from that location and also monitor how it affects the usage of the Nich.
