@@ -12,7 +12,7 @@ Using Docker and the AWS/Python3.9 base image, the application is exported to AW
 ### Analysis
 The entirety of the analysis is found in the Jupyter Notebook [DataAnalyzer.ipynb](DataAnalyzer.ipynb). I used PyMySQL to retrieve the data from the database in the form of a tuple. I then converted this to a Pandas DataFrame. I implemented various functions to clean the data, such as removing duplicates. After that, I created a new DataFrame that contained the average population for each hour. I built a function that plots these averages 8 times (the overall averages and 1 for each day of the week) using Matplotlib. 
 
-<img src="Lvl3.png" width=300 height=300>
+<img src="Lvl3.png" width=650>
 
 ## Results
 All the different floors have very similar results. The gym population reaches a peak at about 6:00. Based on my experience and opinions, this data shows that any time between 2:00-4:00 is a reasonable time to go. I belive that any time before 2:00 is the ideal time to go to the gym.
