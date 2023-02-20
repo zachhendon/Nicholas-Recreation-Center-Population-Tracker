@@ -14,13 +14,15 @@ The entirety of the analysis is found in the Jupyter Notebook [DataAnalyzer.ipyn
 
 <img src="Lvl3.png" width=650>
 
+I also analyzed weekly trends. I partitioned the main DataFrame into smaller DataFrames representing individual weeks. Then, the average population of each smaller DataFrame was plotted.
+
+<img src="lvl3-weekly.png" width=400>
+
 ## Results
 All the different floors have very similar results. The gym population reaches a peak at about 6:00. Based on my experience and opinions, this data shows that any time between 2:00-4:00 is a reasonable time to go. I belive that any time before 2:00 is the ideal time to go to the gym.
 
-One thing to note is that during the later hours there is less data, which may explain the drop offs in some of the graphs. The population appears to drop, but more data (there is currently 3 weeks of data) is required to make actionable decisons.
+I also noticed a steep increase in gym attendance following Winter break. There is a lack of data during the start of the first semester, so it is uncertain whether this spike is something that predictably happens at the beginning of each semester or if it is a general trend related to something else.
 ## Status
-The most useful portion of the data analysis is finished. In the near future, I will add more variables (temperature/weather, game day/week, etc.). This will allow me to analyze more trends and relationships, but this requires the data to accumulate for a while. 
-
-I also will add a feature that automatically produces a weekly report using HTML and CSS in the future. 
-
 UW Madison is currently building another facility. It is set to be finished in the next few months. When it is finished, I will begin collecting data from that location and also monitor how it affects the usage of the Nich.
+
+In the future, I have plans to add a feature for automatically producing a weekly report (likely in pdf format).
